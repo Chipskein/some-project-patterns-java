@@ -1,0 +1,14 @@
+DROP TABLE example;
+CREATE TABLE example (
+cpf VARCHAR(255),
+nome VARCHAR(255),
+idade VARCHAR(255)
+);
+INSERT INTO example VALUES ('111.111.111-11','Teste1','12');
+INSERT INTO example VALUES ('222.222.222-22','Teste2','25');
+INSERT INTO example VALUES ('333.333.333-33','Teste3','30');
+INSERT INTO example VALUES ('444.444.444-44','Teste4','30');
+INSERT INTO example VALUES ('444.454.444-44','Teste31','30');
+INSERT INTO example VALUES ('444.464.444-44','Teste23','23');
+INSERT INTO example VALUES ('424.444.444-44','Teste24','24');
+INSERT INTO example VALUES ('434.474.444-44','Teste5','52');
