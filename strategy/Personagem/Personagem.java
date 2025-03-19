@@ -1,21 +1,25 @@
 package Personagem;
 
-import Arma.AtaqueComportamento;
+import Arma.Arma;
 
 public abstract class Personagem {
     protected String nome;
     protected boolean morto;
     protected float vida;
     protected float forca;
-    protected float destreza;
-    protected float agilidade;
     protected float sorte;
+    protected Arma arma;
 
-    protected AtaqueComportamento comportamentoAtaque;
-
+    public Personagem(String nome,float vida,float forca,float sorte,Arma arma) {
+        this.nome = nome;
+        this.vida = vida;
+        this.forca = forca;
+        this.sorte = sorte;
+        this.arma = arma;
+    }
+    
+    
     abstract public void atacar(Personagem inimigo);
-
-    abstract public void receberDano(AtaqueComportamento comportamentoAtaqueInimigo, Personagem inimigo);
 
     public String getNome() {
         return nome;
@@ -49,21 +53,6 @@ public abstract class Personagem {
         this.forca = forca;
     }
 
-    public float getDestreza() {
-        return destreza;
-    }
-
-    public void setDestreza(float destreza) {
-        this.destreza = destreza;
-    }
-
-    public float getAgilidade() {
-        return agilidade;
-    }
-
-    public void setAgilidade(float agilidade) {
-        this.agilidade = agilidade;
-    }
 
     public float getSorte() {
         return sorte;
@@ -73,20 +62,23 @@ public abstract class Personagem {
         this.sorte = sorte;
     }
 
-    public AtaqueComportamento getComportamentoAtaque() {
-        return comportamentoAtaque;
+    public Arma getArma() {
+        return arma;
     }
 
-    public void setComportamentoAtaque(AtaqueComportamento comportamentoAtaque) {
-        this.comportamentoAtaque = comportamentoAtaque;
+    public void setArma(Arma arma) {
+        this.arma = arma;
     }
 
-    public AtaqueComportamento getAtaque() {
-        return comportamentoAtaque;
+    public void computarAtaque(Personagem inimigo,Personagem atacante){
+        float dano=this.arma.usar(inimigo, this);
+        if(Math.abs(dano)>inimigo.getVida()) dano = inimigo.getVida();
+        else dano=Math.abs(dano);
+        inimigo.setVida(inimigo.getVida()-dano);
+        System.out.println("Ataque bem sucedido");
+        System.out.println("Vida do inimigo: "+inimigo.getVida());
+        if (inimigo.getVida() <= 0) inimigo.setMorto(true);
     }
 
-    public void setAtaque(AtaqueComportamento ca) {
-        comportamentoAtaque = ca;
-    }
 
 }
