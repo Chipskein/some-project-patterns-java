@@ -1,3 +1,8 @@
+package auction;
+
+import Observable.*;
+
+
 public class Bidder implements Observer{
 
     private String name;

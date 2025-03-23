@@ -1,3 +1,5 @@
+package exporter;
+
 public class TextExporter extends Exporter {
 
     public TextExporter(String filepath, char sep) {

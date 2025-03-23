@@ -1,5 +1,10 @@
+package auction;
+
+import Observable.*;
+
 import java.util.ArrayList;
 import java.util.List;
+
 public class Auction implements Subject {
     private List<Observer> bidders = new ArrayList<Observer>();
     private boolean isClosed = false;

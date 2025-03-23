@@ -1,3 +1,5 @@
+package exporter;
+
 public class SQLExporter extends Exporter {
     
     private String tableName;
