@@ -1,3 +1,6 @@
+package controle;
+import jogo.Jogo;
+
 public class Joystick {
     
     private Jogo jogo;

@@ -1,3 +1,7 @@
+import controle.Joystick;
+
+import jogo.*;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Cria JoyStick");

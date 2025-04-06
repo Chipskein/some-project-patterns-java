@@ -1,3 +1,5 @@
+package jogo;
+
 public class JogoLuta implements Jogo {
 
     @Override

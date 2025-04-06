@@ -1,3 +1,5 @@
+package jogo;
+
 public class JogoFutebol implements Jogo {
 
     @Override
