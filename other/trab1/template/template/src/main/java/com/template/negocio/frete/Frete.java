@@ -51,7 +51,7 @@ public abstract class Frete {
         return (valorBaseFrete * desconto_percentual);
     };
     
-    public double calcularFrete() {
+    public final double calcularFrete() {
         double taxaPorDistancia = calcularTaxaPorDistancia();
         double taxaPorPeso = calcularTaxaPorPeso();
         double descontos = calcularDescontos();
