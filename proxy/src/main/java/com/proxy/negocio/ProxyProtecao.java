@@ -13,7 +13,7 @@ public class ProxyProtecao implements Sistema{
         if(e==null) throw new IllegalAccessError("Empregado é null");
         if(c==null) throw new IllegalAccessError("Carro é null");
 
-        if(e.calcularIdade()<= 18){
+        if(e.calcularIdade()< 18){
             System.out.println("Usuario Menor de idade");
             return;
         }
