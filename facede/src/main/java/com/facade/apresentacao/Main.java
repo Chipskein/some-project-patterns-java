@@ -13,5 +13,8 @@ public class Main {
         }
         ImageProcessorFacade facade = new ImageProcessorFacade(resource.getPath());
         facade.saveImage("./testando_rescrever.png","png");
+        facade.resize(100,100);
+        facade.saveImage("./testando_resize.png", "png");
+        
     }
 }
