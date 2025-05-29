@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.facade.negocio.enums.ImageFormat;
+
 public class Saver {
     
     public void save(String out_path,String format,BufferedImage data){

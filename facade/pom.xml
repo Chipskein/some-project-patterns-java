@@ -5,12 +5,29 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.facede</groupId>
-    <artifactId>adapter</artifactId>
+    <artifactId>facade</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <!-- TwelveMonkeys ImageIO Core -->
+        <dependency>
+            <groupId>com.twelvemonkeys.imageio</groupId>
+            <artifactId>imageio-core</artifactId>
+            <version>3.9.4</version>
+        </dependency>
+
+        <!-- TwelveMonkeys JPEG plugin (supports CMYK JPEG reading) -->
+        <dependency>
+            <groupId>com.twelvemonkeys.imageio</groupId>
+            <artifactId>imageio-jpeg</artifactId>
+            <version>3.9.4</version>
+        </dependency>
+        
+    </dependencies>
 
 </project>

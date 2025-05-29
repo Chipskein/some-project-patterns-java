@@ -4,7 +4,7 @@ import java.net.URL;
 import com.facade.negocio.ImageProcessorFacade;
 public class Main {
     public static void main(String[] args) {
-        URL resource = Main.class.getClassLoader().getResource("teste1.jpeg");
+        URL resource = Main.class.getClassLoader().getResource("teste_cmyk.jpg");
         if (resource != null) {
             System.out.println(resource.getPath());
         } else {
@@ -12,9 +12,9 @@ public class Main {
             System.exit(1);
         }
         ImageProcessorFacade facade = new ImageProcessorFacade(resource.getPath());
-        facade.saveImage("./testando_rescrever.png","png");
-        facade.resize(100,100);
-        facade.saveImage("./testando_resize.png", "png");
+        facade.saveImage("./teste.jpg", "jpg");
+
+
         
     }
 }
