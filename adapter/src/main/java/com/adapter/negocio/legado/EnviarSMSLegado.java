@@ -2,7 +2,7 @@ package com.adapter.negocio.legado;
 
 public class EnviarSMSLegado implements SMSSender {
 
-    private int MAX_CHARACTERS = 160;
+    private int MAX_CHARACTERS = 1000;
 
     @Override
     public boolean sendSMS(SMS sms) {
