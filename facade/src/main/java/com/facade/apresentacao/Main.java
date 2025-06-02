@@ -14,8 +14,10 @@ public class Main {
 
         ImageProcessorFacade facade = new ImageProcessorFacade(resource.getPath());
         
+        // Testando redimensionamento
         facade.resize(300, 300);
         
+        //Testando Filtros
         facade.saveImage("./teste-resize.jpg", "jpg");
         facade.applyFilter("NEGATIVE");
         facade.saveImage("./teste-filter-negativo.jpg", "jpg");
@@ -33,12 +35,12 @@ public class Main {
         facade.saveImage("./teste-filter-grayscale.jpg", "jpg");
         
         
+        // Testando thumbnails
         facade.loadImage("./teste-resize.jpg");
-
         facade.thumb(100, 100, ".", 3);
 
+        // Testando conversão de espaço de cores
         facade.loadImage(resource.getPath());
-        
         facade.convertColorSpace("cmyk");
         facade.saveImage("./teste-convert-cmyk.jpg");
 
@@ -46,6 +48,51 @@ public class Main {
         facade.saveImage("./teste-convert-rgb.jpg");
         
         
+        //Testando outros formatos de imagem
+        
+        //BMP
+        resource = Main.class.getClassLoader().getResource("teste4.bmp");
+        if (resource == null) {
+            System.out.println("Resource not found!");
+            System.exit(1);
+        }
+
+        facade.loadImage(resource.getPath());
+        facade.saveImage("./teste4.png", "png");
+
+        //PNG
+        resource = Main.class.getClassLoader().getResource("teste3.png");
+        if (resource == null) {
+            System.out.println("Resource not found!");
+            System.exit(1);
+        }
+
+        facade.loadImage(resource.getPath());
+        facade.saveImage("./teste3.jpg", "jpg");
+
+        //JPEG
+        resource = Main.class.getClassLoader().getResource("teste2.jpeg");
+        if (resource == null) {
+            System.out.println("Resource not found!");
+            System.exit(1);
+        }
+        facade.loadImage(resource.getPath());
+        facade.saveImage("./teste2.bmp", "bmp");
+
+
+        //JPEG 2
+        resource = Main.class.getClassLoader().getResource("teste1.jpeg");
+        if (resource == null) {
+            System.out.println("Resource not found!");
+            System.exit(1);
+        }
+        facade.loadImage(resource.getPath());
+        facade.saveImage("./teste1.png", "png");
+
+
+
+
+
 
         
 
