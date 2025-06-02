@@ -22,7 +22,7 @@ public class Thumber {
                 System.err.println("Failed to create thumbnail for image " + i);
                 continue;
             }
-            String outPath = pathToSaveAll + "/thumbnail_"+i+"."+format.getformat();
+            String outPath = pathToSaveAll + "/thumbnail_"+i+"."+format.getformat().toLowerCase();
             this.saver.save(outPath, format, thumb);
         };
         

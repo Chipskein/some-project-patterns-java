@@ -58,7 +58,7 @@ public class ImageProcessorFacade{
         }
     }
 
-    public void saveImage(String outPath,ImageFormat imageFormat){
+    private void saveImage(String outPath,ImageFormat imageFormat){
         try{
             if (outPath == null || outPath.isEmpty()) throw new IllegalArgumentException("Output path cannot be null or empty.");
             if (this.loader.getCurrentImage() == null) throw new IllegalStateException("No image loaded to save.");
@@ -110,9 +110,15 @@ public class ImageProcessorFacade{
         }
     }
 
-    public void convertColorSpace(ColorSpaceEnum target) {
+    public void convertColorSpace(String targetStr) {
+        /*
+            Essa função tem problemas na conversão,pois Java não suporta a conversão de cores de forma nativa em um BuffredImage.
+            A implementação atual é um gambiarra que usa o twelve monkeys para converter de CMYK para RGB e tenta simular uma conversão para RGB -> CMYK.
+            Para uma conversão mais robusta, seria necessário dropar completamente o uso dos BufferedImage.
+        */
         try {
-            if (target == null) throw new IllegalArgumentException("Target color space cannot be null.");
+            if (targetStr == null || targetStr.isEmpty()) throw new IllegalArgumentException("Target color space cannot be null or empty.");
+            ColorSpaceEnum target = ColorSpaceEnum.valueOf(targetStr.toUpperCase());
             BufferedImage currentImage = this.loader.getCurrentImage();
             if (currentImage == null) throw new IllegalStateException("No image loaded to convert color space.");
             ColorSpaceEnum currentSpace = this.loader.getCurrentColorSpace();
